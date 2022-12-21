@@ -15,6 +15,7 @@
 #### 3.2. [Подключение через Python `pyspark`](https://github.com/SolonnikovDV/otusDbProject/blob/master/task_3/connect_with_pySpark/spark_psql_connect.py) + [screen](https://github.com/SolonnikovDV/otusDbProject/blob/master/task_3/connect_with_pySpark/python_pySpark_connection.png)
 #### 3.3. [Подключение через `bash shell`](https://github.com/SolonnikovDV/otusDbProject/blob/master/task_3/connect_with_bash/bash_psql_connection.sh) + [screen](https://github.com/SolonnikovDV/otusDbProject/blob/master/task_3/connect_with_bash/bash_PostgreSQL_connection.png)
 #### 3.4. [Подключение через  UI DBeaver и DataGrip](https://github.com/SolonnikovDV/otusDbProject/blob/master/task_3/connect_with_UI)
+#### 3.5. [Контейнер PostgreSQL в Docker](https://github.com/SolonnikovDV/otusDbProject/blob/master/task_3/docker/docker_img_postgres.png)
 - - -
 
 <dr>
