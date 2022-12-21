@@ -1,5 +1,5 @@
 ### **Task List:** 
-- - -
+___
 
 #### Task 1. [**Спроектировать базу данных**](https://github.com/SolonnikovDV/otusDbProject/tree/master/task_1)
 #### 1.1. [task description](https://github.com/SolonnikovDV/otusDbProject/blob/main/task_1/task_1_readme.md)
@@ -16,3 +16,4 @@
 #### 3.4. [Подключение через  UI DBeaver и DataGrip](https://github.com/SolonnikovDV/otusDbProject/blob/master/task_3/connect_with_UI)
 #### 3.5. [Контейнер PostgreSQL в Docker](https://github.com/SolonnikovDV/otusDbProject/blob/master/task_3/docker/docker_img_postgres.png)
 - - -
+
