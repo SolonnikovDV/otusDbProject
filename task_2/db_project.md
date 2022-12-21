@@ -1,255 +1,142 @@
-# **Task 1: Спроектировать базу данных**
+# **Task 2: Логические ограничения и индексирование**
 
-## 1. [**1. Схема БД и документация**](#1-схема-бд-и-документация)
-## 2. [**2. Бизнес задачи БД**](#2-бизнес-задачи-бд)
-## 3. [**3. Рекомендации к репликации**](#3-рекомендации-к-репликации)
-## 4. [**4. Требования к резервному копированию**](#4-требования-к-резервному-копированию)
+# **Содержание:**
+## 1. [**1. Структура базы данных**](#1-структура-базы-данных)
+## 2. [**2. Определена кардинальность полей**](#2-определена-кардинальность-полей)
+## 3. [**3. Индексы**](#3-индексы)
+## 4. [**4. Логические ограничения**](#4-логические-ограничения)
 ## 5. [**5. Ссылка на скрипт**](#5-ссылка-на-скрипт)
 <br>
 
 
-# **1. Схема БД и документация**
+# **1. Структура базы данных** 
 
-[Модель БД](https://github.com/SolonnikovDV/database_modeling/blob/main/task_1/db_model_screen.png) представляет собой 8 связанных таблиц:
+[Модель БД](https://github.com/SolonnikovDV/database_modeling/blob/main/task_2/db_model_screen.png) представляет собой 26 связанных таблиц:
+
+<br>
+
 | N   | Table name                    |
 |-----|-------------------------------|
-| 1.  | `container_properties`        |
-| 2.  | `stock`                       |
-| 3.  | `price`                       |
-| 4.  | `customer_loyality_breakdown` |
-| 5.  | `brand`                       |
-| 6.  | `bonus_rubles`                |
-| 7.  | `rating`                      |
-| 8.  | `location`                    |
-| 9.  | `breakdown`                   |
-| 10. | `containers_on_pick_point`    |
-| 11. | `status`                      |
-| 12. | `product_spec`                |
-| 13. | category                      |
-| 14. | pick_point                    |
-| 15. | agent_type                    |
-| 16. | product                       |
-| 17. | customer                      |
-| 18. | individual_attribute          |
-| 19. | unit_properties               |
-| 20. | product_properties            |
-| 21. | company_attribute             |
-| 22. | vendor                        |
-| 23. | delivery                      |
-| 24. | supply_order                  |
-   1. [Таблица `categories`:](#таблица-categories)
-   2. [Таблица `price`:](#таблица-price)
-   3. [Таблица `providers`:](#таблица-providers)
-   4. [Таблица `deliveries`:](#таблица-deliveries)
-   5. [Таблица `purchases`:](#таблица-purchases)
-   6. [Таблица `purchase_item`:](#таблица-purchase_item)
-   7. [Таблица `customers`:](#таблица-customers)
-   8. [Таблица `goods`:](#таблица-goods)
+|1. |[`container_properties`](https://github.com/SolonnikovDV/database_modeling/blob/main/task_2/tables/container_properties.sql)|
+|2. |[`stock`](https://github.com/SolonnikovDV/database_modeling/blob/main/task_2/tables/stock.sql)|
+|3. |[`price`](https://github.com/SolonnikovDV/database_modeling/blob/main/task_2/tables/price.sql)|
+|4. |[`customer_loyality_breakdown`](https://github.com/SolonnikovDV/database_modeling/blob/main/task_2/tables/customer_loyality_breakdown.sql)|
+|5. |[`bonus_rubles`](https://github.com/SolonnikovDV/database_modeling/blob/main/task_2/tables/bonus_rubles.sql)|
+|6. |[`rating`](https://github.com/SolonnikovDV/database_modeling/blob/main/task_2/tables/rating.sql)|
+|7. |[`brand`](https://github.com/SolonnikovDV/database_modeling/blob/main/task_2/tables/brand.sql)|
+|8. |[`location`](https://github.com/SolonnikovDV/database_modeling/blob/main/task_2/tables/location.sql)|
+|9. |[`breakdown`](https://github.com/SolonnikovDV/database_modeling/blob/main/task_2/tables/breakdown.sql)|
+|10. |[`status`](https://github.com/SolonnikovDV/database_modeling/blob/main/task_2/tables/status.sql)|
+|11. |[`to_pick_point_transaction`](https://github.com/SolonnikovDV/database_modeling/blob/main/task_2/tables/to_pick_point_transaction.sql)|
+|12. |[`product_spec`](https://github.com/SolonnikovDV/database_modeling/blob/main/task_2/tables/product_spec.sql)|
+|13. |[`category`](https://github.com/SolonnikovDV/database_modeling/blob/main/task_2/tables/category.sql)|
+|14. |[`pick_point`](https://github.com/SolonnikovDV/database_modeling/blob/main/task_2/tables/pick_point.sql)|
+|15. |[`agent_type`](https://github.com/SolonnikovDV/database_modeling/blob/main/task_2/tables/agent_type.sql)|
+|16. |[`product`](https://github.com/SolonnikovDV/database_modeling/blob/main/task_2/tables/product.sql)|
+|17. |[`customer`](https://github.com/SolonnikovDV/database_modeling/blob/main/task_2/tables/customer.sql)|
+|18. |[`individual_attribute`](https://github.com/SolonnikovDV/database_modeling/blob/main/task_2/tables/individual_attribute.sql)|
+|19. |[`container`](https://github.com/SolonnikovDV/database_modeling/blob/main/task_2/tables/container.sql)|
+|20. |[`unit_properties`](https://github.com/SolonnikovDV/database_modeling/blob/main/task_2/tables/unit_properties.sql)|
+|21. |[`product_properties`](https://github.com/SolonnikovDV/database_modeling/blob/main/task_2/tables/product_properties.sql)|
+|22. |[`company_attribute`](https://github.com/SolonnikovDV/database_modeling/blob/main/task_2/tables/company_attribute.sql)|
+|23. |[`vendor`](https://github.com/SolonnikovDV/database_modeling/blob/main/task_2/tables/vendor.sql)|
+|24. |[`delivery`](https://github.com/SolonnikovDV/database_modeling/blob/main/task_2/tables/delivery.sql)|
+|25. |[`supply_order`](https://github.com/SolonnikovDV/database_modeling/blob/main/task_2/tables/supply_order.sql)|
+|26. |[`purchase_order`](https://github.com/SolonnikovDV/database_modeling/blob/main/task_2/tables/purchase_order.sql)|
 
+<br>
 
 Визуализация модели БД:
-![Визуализация модели БД](https://github.com/SolonnikovDV/database_modeling/blob/main/task_1/db_model_screen.png?raw=true)
-<br>
-<br>
-
-## Определены поля ключевые / уникальные поля (PRIMARY KEY / UNIQUE)
-
-## Добавлены простоые и композитные индексы
-<br>
-Перечень таблиц с индексами:
-
-
-
-
-<!-- categories -->
-## Таблица `categories`:
-* * *
-Описывает категории товаров и включает в себя 2 поля `category_id` и `category_name`.
-<br> 
-Где `category_id` является ключевым полем `PRIMARY KEY`.
+![Визуализация модели БД](https://github.com/SolonnikovDV/database_modeling/blob/main/task_2/db_model_screen.png?raw=true)
 
 <br>
 
-Схема таблицы `Categories`:
-| table_name |  column_name  |     data_type     |
-|:-----------|:--------------|:------------------|
-| categories | category_id   | character varying |
-| categories | category_name | character varying |
-
-<br>
-
-<!-- price -->
-## Таблица `price`:
-* * *
-Описывает динамику изменения стоимости товара и включает в себя 3 поля `goods_id`, `price_datetime` и `price_on_date`.
-<br>
-Где `goods_id` является внешним ключем `FOREIGN KEY` таблицы `goods`.
-Проле `price_on_date` отражает величину стоимости товара на дату `price_datetime`.
-Таблица отражает изменение цены на товар в течение времени и корректирует стоимость на заданную дату.
-
-<br>
-
-Схема таблицы `price`:
-|table_name|column_name   |data_type               |
-|----------|--------------|------------------------|
-|price     |price_datetime|timestamp with time zone|
-|price     |price_on_date |double precision        |
-|price     |goods_id      |character varying       |
-
-<br>
-
-<!-- providers -->
-## Таблица `providers`:
-* * *
-Описывает производителей товаров и включает в себя 2 поля `provider_id` и `provider_name`.
-<br>
-Где `provider_id` является ключевым полем `PRIMARY KEY`.
-
-<br>
-
-Схема таблицы `providers`:
-|table_name|column_name   |data_type               |
-|----------|--------------|------------------------|
-|providers |provider_id   |character varying       |
-|providers |provider_name |character varying       |
-
-<br>
-
-<!-- deliveries -->
-## Таблица `deliveries`:
-* * *
-Описывает какой товар, в каком количестве и на какую даты был поставлен провайдером (производителем/поставщиком) и включает в себя 4 поля `delivery_date`, `goods_unit`, `goods_count` и `goods_id`.
-<br>
-Где `goods_id` является внешним ключем `FOREIGN KEY` таблицы `goods`.
-
-<br>
-
-Схема таблицы `deliveries`:
-|table_name|column_name   |data_type               |
-|----------|--------------|------------------------|
-|deliveries|delivery_date |timestamp with time zone|
-|deliveries|goods_unit    |double precision        |
-|deliveries|goods_count   |double precision        |
-|deliveries|goods_id      |character varying       |
-
-<br>
-
-<!-- purchases -->
-## Таблица `purchases`:
-* * *
-Описывает какие товары и кем (какие покупателем) были выкуплен и включает в себя 3 поля `purchase_date`, `purchase_id` и `customer_id`.
-<br>
-Где `purchase_id` является лючевым полем `PRIMARY KEY` таблицы, а поле `customer_id` является внешним ключем `FOREIGN KEY` таблицы `customers`.
-
-<br>
-
-Схема таблицы `purchases`:
-|table_name|column_name      |data_type               |
-|----------|-----------------|------------------------|
-|purchases |purchase_date    |timestamp with time zone|
-|purchases |purchase_id      |character varying       |
-|purchases |customer_id      |character varying       |
-
-<br>
-
-<!-- purchase_item -->
-## Таблица `purchase_item`:
-* * *
-Описывает какой товар, в каком количестве и на какую даты был выкуплен и включает в себя 4 поля `goods_count`, `purchase_price`, `purchase_id` и `goods_id`.
-<br>
-Где `goods_id` является внешним ключем `FOREIGN KEY` таблицы `goods`, а поле `purchase_id` является внешним ключем `FOREIGN KEY` таблицы `purchases`.
-
-<br>
-
-Схема таблицы `purchase_item`:
-|table_name|column_name      |data_type               |
-|----------|-----------------|------------------------|
-|purchase_item|goods_count   |double precision        |
-|purchase_item|purchase_price|double precision        |
-|purchase_item|purchase_id   |character varying       |
-|purchase_item|goods_id      |character varying       |
-
-<br>
-
-<!-- customers -->
-## Таблица `customers`:
-* * *
-Описывает покупателя и включает в себя 3 поля `customer_id`, `customer_last_name` и `customer_first_name`.
-<br>
-Где `customer_id` является лючевым полем `PRIMARY KEY` таблицы,.
-
-<br>
-
-Схема таблицы `customers`:
-|table_name|column_name        |data_type               |
-|----------|-------------------|------------------------|
-|customers |customer_id        |character varying       |
-|customers |customer_last_name |text                    |
-|customers |customer_first_name|text                    |
-
-<br>
-
-<!-- goods -->
-## Таблица `goods`:
-* * *
-Описывает продукт, его название, категорию, а также указывает его производителя и включает в себя 4 поля `goods_id`, `goods_name`, `provider_id` и `category_id`.
-<br>
-Где `goods_id` является лючевым полем `PRIMARY KEY` таблицы, а поле`provider_id` является внешним ключем `FOREIGN KEY` таблицы `providers`, поле `category_id` является внешним ключем `FOREIGN KEY` таблицы `categories`.
-
-<br>
-
-Схема таблицы `goods`:
-|table_name|column_name        |data_type               |
-|----------|-------------------|------------------------|
-|goods     |goods_id           |character varying       |
-|goods     |goods_name         |character varying       |
-|goods     |provider_id        |character varying       |
-|goods     |category_id        |character varying       |
-
+[# назад в оглавление](#содержание) 
+- - -
 <br>
 <br>
 
-<!--cases-->
-# **2. Бизнес задачи БД**
 
-Данная БД управляет движением товара от его закупки до реализации.
-<br>
-Связи между таблицами позволяют регистровать состояние сущности товара на каждом жизненного цикла этапе:
-<br>
-1. Количество закупленного проданного наименования товара, товара группы производителя
-2. Сумма затраченных/вырученных денежных средств
-3. Динамика изменения стоимости товара по наименованию, по группе производителя в разрезе временного промежутка
-4. Косвенно позволяет определить сезонность товара (в случае, когда наблюдается высокая конверсия по категории/наименованию)
-5. Определяет частоту покупок по покупателю
-6. Определяет частоту поставок по производителю/провайдеру
-
+# **2. Определена кардинальность полей**
 <br>
 
-Перспектива:
-<br>
-1. Реализация таблицы возвратов `returns` (поля: `goods_id`, `customer_id`, `purchase_id`, `id_cause_of_return`) и таблицы причин возвратов `causes_of_returns` (поля:  `cause_of_return_id`, `cause_describe`) позволит вести статистику причина возврата (брак/дефект, размер, иные потребительсие свойства не удовлетворившие покупаателя), а также статистику по поставщику продукции, включая разработку скоринговой модели оценки привлекательности поставщика.
-2. Разработка скоринговой модели оценки привлекательности покупателя и расчет персональной скидки покупаателю.<br>
-Для это должна быть разработана таблица `discount`  с полями `goods_id` (связб с таблицей `goods`), `customer_id` (связь с таблицей `customers`), `personal_discount`.
-<br>
-<br>
-<!--replicate-->
+## Определены поля ключевые / уникальные поля:
+Таким полями выступают:
 
-# **3. Рекомендации к репликации**
+|Type   |Dectription  |Code       |
+|-------|-------------|-----------|
+|первичный ключ|натуральное число, последующее значение всегда больше предыдущего, отвечает требования уникальности| `PRIMARY KEY()`| 
+|уникальное поле|определяет ограничение поля по признаку уникальности, работает со всеми типами данных|`CONSTRAINT <set_name> UNIQUE(<your_field>)`|
+|внешний ключ|ссылка на поле внешней таблицы, типы данных для `<your_field>` и `<field_of_external_table>` должны совпадать|`FOREIGN KEY (<your_field>) REFERENCES <external_table_name> (<field_of_external_table>)`|
+<br>
 
-Для обеспечения отказоустойчивости инфраструктуры предлагаем испольховать физический тип репликации.
+[# назад в оглавление](#содержание) 
+- - -
 <br>
-Частота выполнения репликаций не определена.
 <br>
-<br>
-<!--copy-->
 
-# **4. Требования к резервному копированию**
-
-В качестве способа резервного копирования базыд данных предлагаем использовать "горячее" копирование без остановки базы данных. Перспектива разватия - инкрементальное копирование базы данных. 
+# **3. Индексы**
 <br>
-Частота резервного копирования не определена. Однако, в случае реализиации инкреметального копирования, вохможно установить почасовую частоту.
+
+## Добавлены простые и композитные индексы с описанием. Перечень таблиц с индексами:
+<br>
+
+| N   | Table name                       |Indexes                            |
+|-----|----------------------------------|-----------------------------------|
+| 1.  |`agent_type`                      |1 single index                     |
+| 2.  |`bonus_rubles`                    |1 single index                     |
+| 3.  |`brand`                           |1 composite index                  |
+| 4.  |`category`                        |1 single index                     |
+| 5.  |`company_attribute`               |2 single index                     |
+| 6.  |`containers_on_pick_point`        |1 single index                     |
+| 7.  |`container_properties`            |1 coposite index, 2 single indexes |
+| 8.  |`customer`                        |1 single index                     |
+| 9.  |`customer_loyality_breakdown`     |1 coposite index, 1 single index   |
+| 10. |`delivery`                        |1 single index                     |
+| 11. |`individual_attribute`            |3 single indexes                   |
+| 12. |`location`                        |1 composite index                  |
+| 13. |`pick_point`                      |2 single indexes                   |
+| 14. |`price`                           |1 composite index                  |
+| 15. |`product_properties`              |2 single indexes                   |
+| 16. |`product_spec`                    |1 single index                     |
+| 17. |`product`                         |1 coposite index, 3 single indexes |
+| 18. |`purchase_order`                  |1 single index                     |
+| 19. |`stock`                           |1 single index                     |
+| 18. |`supply_order`                    |3 single indexes                   |
+| 19. |`vendor`                          |1 composite index                  |
+| 20. |`to_pick_point_transaction`       |1 single index                     |
+
+<br>
+
+[# назад в оглавление](#содержание) 
+- - -
+<br>
+<br>
+
+# **4. Логические ограничения** 
+<br>
+### Добавлены ограничения слудующего вида
+<br>
+
+|Type    |Descritption   |Code    |
+|--------|---------------|--------|
+|количество|ограничивает параметры вводимых значений, значение может находиться в диапазоне больше, либо равно нулю;<br>ограничение распространаятеся на количественные показатели в том числе цену|`CONSTRAINT "enter_your_check_procedure_name" CHECK(<field_for_check> >= 0)`|
+|дата|отсекает значение поля в формате `timestamp` , если оно хронологически ниже текущей даты|`CONSTRAINT "enter_your_check_procedure_name" CHECK(<field_for_check> >= NOW()::timestamp)`|
+|пустое значение|проверка на пустое значение `NULL`, поля для которых включена такая проверка не могут принимать значения `NULL`|`<field_name> NOT NULL`|
+
+<br>
+
+[# назад в оглавление](#содержание) 
+- - -
 <br>
 <br>
 
 # **5. Ссылка на скрипт**
-[Скрипт сценария создания таблиц](https://github.com/SolonnikovDV/database_modeling/blob/main/task_1/script_table_creation.sql)
+[Скрипты со сценариями создания таблиц](https://github.com/SolonnikovDV/database_modeling/tree/main/task_2/tables)
+
+<br>
+
+[# назад в оглавление](#содержание) 
+- - -
+<br>
+<br>

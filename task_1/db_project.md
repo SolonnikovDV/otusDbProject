@@ -10,7 +10,7 @@
 
 # **1. Схема БД и документация**
 
-[Модель БД](https://github.com/SolonnikovDV/database_modeling/blob/main/task_1/db_model_screen.png) представляет собой 8 связанных таблиц:
+[Модель БД](https://github.com/SolonnikovDV/otusDbProject/tree/master/task_1/db_model_screen.png) представляет собой 8 связанных таблиц:
 
    1. [Таблица `categories`:](#таблица-categories)
    2. [Таблица `price`:](#таблица-price)
@@ -23,7 +23,7 @@
 
 
 Визуализация модели БД:
-![Визуализация модели БД](https://github.com/SolonnikovDV/database_modeling/blob/main/task_1/db_model_screen.png?raw=true)
+![Визуализация модели БД](https://github.com/SolonnikovDV/otusDbProject/blob/master/task_1/db_model_screen.png?raw=true)
 <br>
 <br>
 
@@ -218,4 +218,4 @@
 <br>
 
 # **5. Ссылка на скрипт**
-[Скрипт сценария создания таблиц](https://github.com/SolonnikovDV/database_modeling/blob/main/task_1/script_table_creation.sql)
+[Скрипт сценария создания таблиц](https://github.com/SolonnikovDV/otusDbProject/tree/master/task_1/script_table_creation.sql)
