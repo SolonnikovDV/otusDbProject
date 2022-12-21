@@ -1,7 +1,9 @@
 from datetime import datetime
 import psycopg2
-import utils.config as cfg
 import pandas as pd
+
+# local import
+import utils.config as cfg
 
 DATA_TIME = datetime.now()
 HOST = cfg.HOST
@@ -9,6 +11,7 @@ PORT = cfg.PORT
 DBNAME = cfg.DBNAME
 USER = cfg.USER
 PASSWORD = cfg.PASSWORD
+
 
 # create connection to PostgreSql
 def create_connection_to_psql(host, port, dbname, user, password):
@@ -39,7 +42,6 @@ def db_info():
                       ORDER BY table_schema, table_name;""")
     df = pd.DataFrame(cursor.fetchall(), columns=['Schema_name', 'Table_name'])
     print(f'Data base {DBNAME} info:\n{df}\n{df.count()}')
-    # print(df.count())
 
     cursor.close()
 

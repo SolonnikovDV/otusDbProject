@@ -23,7 +23,7 @@ FROM pg_catalog.pg_user
 ORDER BY role_name desc;"
 
 # show all tables in data base
-echo "Do you wish to see data base schema"
+echo "Do you want to browse data base schema"
 select yn in "Yes" "No"; do
   case $yn in
   Yes)
@@ -40,3 +40,5 @@ select yn in "Yes" "No"; do
     ;;
   esac
 done
+
+psql postgresql://pg-user:pg-pass@localhost:5432/otus-project
