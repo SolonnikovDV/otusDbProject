@@ -7,6 +7,7 @@ pg_postmaster_start_time(),
 user, pg_backend_pid(),
 inet_server_port()"
 
+# displays roles with attributes
 psql postgresql://pg-user:pg-pass@localhost:5432/otus-project -c \
 "SELECT usename AS role_name,
   CASE
@@ -39,6 +40,9 @@ select yn in "Yes" "No"; do
     exit
     ;;
   esac
+  # goto psql shell
+  psql postgresql://pg-user:pg-pass@localhost:5432/otus-project
 done
+
 
 psql postgresql://pg-user:pg-pass@localhost:5432/otus-project
