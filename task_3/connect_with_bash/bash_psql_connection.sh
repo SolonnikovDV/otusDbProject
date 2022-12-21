@@ -46,3 +46,5 @@ done
 
 
 psql postgresql://pg-user:pg-pass@localhost:5432/otus-project
+
+psql postgresql://pg-user:pg-pass@localhost:5432/otus-project -c "SELECT table_schema , table_name FROM information_schema.table WHERE table_schema not in ('information_schema', 'pg_catalog' AND table_type = 'BASE TABLE' ORDER BY table_schema, table_name;"
