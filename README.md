@@ -18,10 +18,10 @@ ___
 - - -
 
 #### Task 4. [**DDL операторы**]()
-#### 4.1. [Создание базы данных]()
-#### 4.2. [Создание табличных пространств и ролей]()
-#### 4.3. [Создание схемы данных]()
-#### 4.4. [Распределение таблиц по схемам и табличным пространствам]()
+#### 4.1. [Создание базы данных](https://github.com/SolonnikovDV/otusDbProject/blob/master/task_4/1_create_db.png)
+#### 4.2. [Создание табличных пространств и ролей](https://github.com/SolonnikovDV/otusDbProject/blob/master/task_4/2_create_tablespace.png)
+#### 4.3. [Создание схемы данных](https://github.com/SolonnikovDV/otusDbProject/blob/master/task_4/3_create_new_schema.png)
+#### 4.4. [Распределение таблиц по схемам](https://github.com/SolonnikovDV/otusDbProject/blob/master/task_4/4_1_tables_in_user_schemas.png) и [табличным пространствам](https://github.com/SolonnikovDV/otusDbProject/blob/master/task_4/4_2_moving_table_to_tablespace.png)
 #### 4.5. [task description]()
 - - -
 
