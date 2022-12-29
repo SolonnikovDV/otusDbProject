@@ -22,7 +22,7 @@ ___
 #### 4.2. [Создание табличных пространств и ролей](https://github.com/SolonnikovDV/otusDbProject/blob/master/task_4/2_create_tablespace.png)
 #### 4.3. [Создание схемы данных](https://github.com/SolonnikovDV/otusDbProject/blob/master/task_4/3_create_new_schema.png)
 #### 4.4. [Распределение таблиц по схемам](https://github.com/SolonnikovDV/otusDbProject/blob/master/task_4/4_1_tables_in_user_schemas.png) и [табличным пространствам](https://github.com/SolonnikovDV/otusDbProject/blob/master/task_4/4_2_moving_table_to_tablespace.png)
-#### 4.5. [task description]()
+#### 4.5. [task description](https://github.com/SolonnikovDV/otusDbProject/blob/master/task_4/task_4_description.md)
 - - -
 
 
