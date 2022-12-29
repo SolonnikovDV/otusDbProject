@@ -16,7 +16,7 @@
 
 <h3>Создана база данных <tt>ddl-task</tt> в табличном пространстве <tt>pg_default</tt>:</h3>
 <h3><tt># create database "ddl-task" with owner="pg-user" encoding='UTF-8' tablespace=pg_default;</tt></h3>
-<img src=”https://github.com/SolonnikovDV/otusDbProject/blob/master/task_4/1_create_db.png?raw=true”>
+<img src="https://github.com/SolonnikovDV/otusDbProject/blob/master/task_4/1_create_db.png?raw">
 
 
 <br>
