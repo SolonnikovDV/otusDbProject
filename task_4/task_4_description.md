@@ -109,7 +109,7 @@
 <hr>
 
 <br>
-<h2><a name="скрипт-создания-страниц">5. Скрипт создания страниц</a></h2>
+<h2><a name="скрипт-создания-таблиц">5. Скрипт создания страниц</a></h2>
 <h6><a href="#содержание">назад в содержание</a></h6>
 <br>
 <h3>Скрипт создания страниц доступен по <a href="https://github.com/SolonnikovDV/otusDbProject/blob/master/task_4/sql_script_table_create.sql">ссылке</h3>
