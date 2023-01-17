@@ -54,9 +54,9 @@
 
 <h3><A name="#left-join">3.1. <tt>LEFT JOIN</tt></A></h3>
 <h3>Запрос c <tt>LEFT JOIN</tt> по таблице <tt>df_person</tt>:
-  <h3><tt>select "name", "teamName" , "division.name"</h3>
-  <h3>from df_teams</h3>
-  <h3>left join df_division on df_teams."division.id" = df_division."division.id";</h3></tt></h3><h3>
+<h3><tt>select "name", "teamName" , "division.name"</h3>
+<h3>from df_teams</h3>
+<h3>left join df_division on df_teams."division.id" = df_division."division.id";</h3></tt></h3><h3>
 <br>
 <h3>Получаем выборку <tt>LEFT JOIN</tt>>:</h3>
 
@@ -73,17 +73,17 @@
 <h3><tt>LEFT JOIN</tt> не обнаружил записей в таблице справа <tt>df_division</tt> для строки #33 таблицы <tt>df_teams</tt></h3>
 <br>
 <h3>Запрос c <tt>INNER JOIN</tt> по таблице <tt>df_person</tt>:
-  <h3><tt>sselect "name", "teamName" , "division.name"</h3>
-  <h3>from df_teams</h3>
-  <h3>inner join df_division on df_teams."division.id" = df_division."division.id";</h3></tt>
+<h3><tt>sselect "name", "teamName" , "division.name"</h3>
+<h3>from df_teams</h3>
+<h3>inner join df_division on df_teams."division.id" = df_division."division.id";</h3></tt>
 </h3>
 
 <br>
 <h3><A href="#right-join">3.2. <tt>RIGHT JOIN</tt></A></h3>
 <h3>Запрос c <tt>RIGHT JOIN</tt> по таблице <tt>df_person</tt>:
-  <h3><tt>select "name", "teamName" , "division.name"</h3>
-  <h3>from df_teams</h3>
-  <h3>left join df_division on df_teams."division.id" = df_division."division.id";</h3></tt></h3><h3>
+<h3><tt>select "name", "teamName" , "division.name"</h3>
+<h3>from df_teams</h3>
+<h3>left join df_division on df_teams."division.id" = df_division."division.id";</h3></tt></h3><h3>
 <br>
 <h3>Получаем выборку <tt>LEFT JOIN</tt>>:</h3>
 
@@ -102,9 +102,9 @@
 
 <h3><A href="#inner-join">3.3. <tt>INNER JOIN</tt></A></h3>
 <h3>Запрос c <tt>INNER JOIN</tt> по таблице <tt>df_person</tt>:
-  <h3><tt>sselect "name", "teamName" , "division.name"</h3>
-  <h3>from df_teams</h3>
-  <h3>inner join df_division on df_teams."division.id" = df_division."division.id";</h3></tt>
+<h3><tt>sselect "name", "teamName" , "division.name"</h3>
+<h3>from df_teams</h3>
+<h3>inner join df_division on df_teams."division.id" = df_division."division.id";</h3></tt>
 </h3>
 
 <br>
@@ -127,8 +127,8 @@
 <br>
 <h3>За отображение сведений о выполненных изменениях с таблицей операциями <tt>UPDATE, INSERT, DELETE</tt> отвечает операция <tt>RETURNING(col1, col2, ...)</tt>:</h3>
 <h3>
-  <h3><tt>insert into df_division ("division.id" , "division.name" ) </h3> 
-  <h3>values (666 , 'Hellfire') returning *;</tt></h3>
+<h3><tt>insert into df_division ("division.id" , "division.name" ) </h3> 
+<h3>values (666 , 'Hellfire') returning *;</tt></h3>
 <h3>
 <br>
 
@@ -145,13 +145,13 @@
 
 <h3>
   Создадим таблицу <tt>new_table</tt> и добавим в нее пустые строки,содержащие только <tt>id</tt>
-    <h3><tt>create table new_table (id bigint, name varchar, division_id int, division_name text);</tt></h3>
-    <h3><tt>insert into new_table  values</tt></h3>
-    <h3><tt>(1, null, null, null),</tt></h3>
-    <h3><tt>(2, null, null, null),</tt></h3>
-    <h3><tt>(3, null, null, null),</tt></h3>
-    <h3><tt>(333, null, null, null);</tt></h3>
-    <h3><tt>select * from new_table;</tt></h3>
+<h3><tt>create table new_table (id bigint, name varchar, division_id int, division_name text);</tt></h3>
+<h3><tt>insert into new_table  values</tt></h3>
+<h3><tt>(1, null, null, null),</tt></h3>
+<h3><tt>(2, null, null, null),</tt></h3>
+<h3><tt>(3, null, null, null),</tt></h3>
+<h3><tt>(333, null, null, null);</tt></h3>
+<h3><tt>select * from new_table;</tt></h3>
 </h3>
 <br>
 
@@ -164,13 +164,13 @@
 
 <h3>
 Заполним таблицу данными из таблицы <tt>df_teams</tt> через оператор <tt>UPDATE</tt>:
-    <h3><tt>with subquery AS (select "id", "name", "division.id" FROM df_teams)</tt></h3>
-    <h3><tt>update new_table</tt></h3>
-    <h3><tt>set "name" = subquery."name",</tt></h3>
-    <h3><tt>"division_id" = subquery."division.id"</tt></h3>
-    <h3><tt>from subquery</tt></h3>
-    <h3><tt>where new_table."id" = subquery."id"</tt></h3>
-    <h3><tt>returning *;</tt></h3>
+<h3><tt>with subquery AS (select "id", "name", "division.id" FROM df_teams)</tt></h3>
+<h3><tt>update new_table</tt></h3>
+<h3><tt>set "name" = subquery."name",</tt></h3>
+<h3><tt>"division_id" = subquery."division.id"</tt></h3>
+<h3><tt>from subquery</tt></h3>
+<h3><tt>where new_table."id" = subquery."id"</tt></h3>
+<h3><tt>returning *;</tt></h3>
 </h3>
 <br>
 
@@ -188,11 +188,11 @@
 
 <h3>  
   Завершаем наполнение таблицы, добавляя данные из таблицы <tt>df_division</tt> через оператор <tt>UPDATE</tt>:
-  <h3><tt>update new_table</tt></h3>
-  <h3><tt>set "division_name" = df_division."division.name"</tt></h3>
-  <h3><tt>from df_division</tt></h3>
-  <h3><tt>where new_table.division_id = df_division."division.id"</tt></h3>
-  <h3><tt>returning *;</tt></h3>
+<h3><tt>update new_table</tt></h3>
+<h3><tt>set "division_name" = df_division."division.name"</tt></h3>
+<h3><tt>from df_division</tt></h3>
+<h3><tt>where new_table.division_id = df_division."division.id"</tt></h3>
+<h3><tt>returning *;</tt></h3>
 </h3>
 <br>
 
