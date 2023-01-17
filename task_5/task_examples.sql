@@ -111,15 +111,15 @@ select * from new_table nt ;
 
 
 -- fill with UPDATE column division_id
-WITH subquery AS (
+with subquery AS (
 select "id", "name", "division.id"
-FROM df_teams
+from df_teams
 )
-UPDATE new_table
+update new_table
 set "name" = subquery."name",
 "division_id" = subquery."division.id"
-FROM subquery
-WHERE new_table."id" = subquery."id"
+from subquery
+where new_table."id" = subquery."id"
 returning *;
 -- returning value:
 --
