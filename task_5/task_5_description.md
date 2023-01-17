@@ -27,9 +27,13 @@
 <h6><A href="#содержание">назад в содержание</A></h6>
 <br>
 <h3>Запрос по таблице <tt>df_person</tt> с условием найти все поля содержащие в начале строку <tt>Left</tt>:
-<h3>select "fullName", "position.name" , "link"</h3>
-<h3>from df_person dp</h3>
-<h3>where "position.name"  like 'Left%';</h3><h3>
+<br>
+
+```select "fullName", "position.name" , "link"
+from df_person dp
+where "position.name"  like 'Left%';
+```
+
 <br>
 <h3>Получаем выборку по признаку <tt>Left</tt>:</h3>
 
@@ -53,10 +57,12 @@
 <br>
 
 <h3><A name="#left-join">3.1. <tt>LEFT JOIN</tt></A></h3>
-<h3>Запрос c <tt>LEFT JOIN</tt> по таблице <tt>df_person</tt>:
-<h3><tt>select "name", "teamName" , "division.name"</h3>
-<h3>from df_teams</h3>
-<h3>left join df_division on df_teams."division.id" = df_division."division.id";</h3></tt></h3><h3>
+
+```
+select "name", "teamName" , "division.name"
+from df_teams
+left join df_division on df_teams."division.id" = df_division."division.id";
+```
 <br>
 <h3>Получаем выборку <tt>LEFT JOIN</tt>>:</h3>
 
@@ -80,10 +86,12 @@
 
 <br>
 <h3><A href="#right-join">3.2. <tt>RIGHT JOIN</tt></A></h3>
-<h3>Запрос c <tt>RIGHT JOIN</tt> по таблице <tt>df_person</tt>:
-<h3><tt>select "name", "teamName" , "division.name"</h3>
-<h3>from df_teams</h3>
-<h3>left join df_division on df_teams."division.id" = df_division."division.id";</h3></tt></h3><h3>
+
+```
+select "name", "teamName" , "division.name"
+from df_teams
+right join df_division on df_teams."division.id" = df_division."division.id";
+```
 <br>
 <h3>Получаем выборку <tt>LEFT JOIN</tt>>:</h3>
 
@@ -101,11 +109,12 @@
 <br>
 
 <h3><A href="#inner-join">3.3. <tt>INNER JOIN</tt></A></h3>
-<h3>Запрос c <tt>INNER JOIN</tt> по таблице <tt>df_person</tt>:
-<h3><tt>sselect "name", "teamName" , "division.name"</h3>
-<h3>from df_teams</h3>
-<h3>inner join df_division on df_teams."division.id" = df_division."division.id";</h3></tt>
-</h3>
+
+```
+select "name", "teamName" , "division.name"
+from df_teams
+inner join df_division on df_teams."division.id" = df_division."division.id";
+```
 
 <br>
 <h3>Получаем выборку <tt>INNER JOIN</tt>>:</h3>
@@ -127,9 +136,11 @@
 <br>
 <h3>За отображение сведений о выполненных изменениях с таблицей операциями <tt>UPDATE, INSERT, DELETE</tt> отвечает операция <tt>RETURNING(col1, col2, ...)</tt>:</h3>
 <h3>
-<h3><tt>insert into df_division ("division.id" , "division.name" ) </h3> 
-<h3>values (666 , 'Hellfire') returning *;</tt></h3>
-<h3>
+
+```
+insert into df_division ("division.id" , "division.name" ) values (666 , 'Hellfire') 
+returning *;
+```
 <br>
 
 |division.id | division.name |
@@ -145,14 +156,20 @@
 
 <h3>
   Создадим таблицу <tt>new_table</tt> и добавим в нее пустые строки,содержащие только <tt>id</tt>
-<h3><tt>create table new_table (id bigint, name varchar, division_id int, division_name text);</tt></h3>
-<h3><tt>insert into new_table  values</tt></h3>
-<h3><tt>(1, null, null, null),</tt></h3>
-<h3><tt>(2, null, null, null),</tt></h3>
-<h3><tt>(3, null, null, null),</tt></h3>
-<h3><tt>(333, null, null, null);</tt></h3>
-<h3><tt>select * from new_table;</tt></h3>
-</h3>
+
+```
+create table new_table (id bigint, name varchar, division_id int, division_name text);
+```
+```
+insert into new_table  values
+  (1, null, null, null),
+  (2, null, null, null),
+  (3, null, null, null),
+  (333, null, null, null);
+```
+```
+select * from new_table nt ;
+```
 <br>
 
 |id |name    |division_id    |division_name    |
@@ -164,14 +181,20 @@
 
 <h3>
 Заполним таблицу данными из таблицы <tt>df_teams</tt> через оператор <tt>UPDATE</tt>:
-<h3><tt>with subquery AS (select "id", "name", "division.id" FROM df_teams)</tt></h3>
-<h3><tt>update new_table</tt></h3>
-<h3><tt>set "name" = subquery."name",</tt></h3>
-<h3><tt>"division_id" = subquery."division.id"</tt></h3>
-<h3><tt>from subquery</tt></h3>
-<h3><tt>where new_table."id" = subquery."id"</tt></h3>
-<h3><tt>returning *;</tt></h3>
-</h3>
+
+
+```
+with subquery AS (
+  select "id", "name", "division.id"
+  from df_teams
+  )
+update new_table
+set "name" = subquery."name",
+"division_id" = subquery."division.id"
+from subquery
+where new_table."id" = subquery."id"
+returning *;
+```
 <br>
 
 <h3>
@@ -188,12 +211,14 @@
 
 <h3>  
   Завершаем наполнение таблицы, добавляя данные из таблицы <tt>df_division</tt> через оператор <tt>UPDATE</tt>:
-<h3><tt>update new_table</tt></h3>
-<h3><tt>set "division_name" = df_division."division.name"</tt></h3>
-<h3><tt>from df_division</tt></h3>
-<h3><tt>where new_table.division_id = df_division."division.id"</tt></h3>
-<h3><tt>returning *;</tt></h3>
-</h3>
+
+```
+update new_table
+set "division_name" = df_division."division.name"
+from df_division
+where new_table.division_id = df_division."division.id"
+returning *;
+```
 <br>
 
 <h3>
@@ -225,11 +250,18 @@
 <br>
 
 <h3><A name="delete-join">6.1. <tt>DELETE + JOIN</tt></A></h3>
-<h3><tt>delete from new_table where "name" in </tt></h3>
-<h3><tt>(select new_table."name" </tt></h3>
-<h3><tt>from new_table left join df_teams on new_table."name" = df_teams."name" </tt></h3>
-<h3><tt>where df_teams."name" like '%Jersey%');</tt></h3>
-<h3><tt>select * from new_table ;</tt></h3>
+
+```
+delete from new_table 
+where "name" in (
+  select new_table."name" 
+  from new_table left join df_teams on new_table."name" = df_teams."name" 
+  where df_teams."name" like '%Jersey%'
+  );
+```
+```
+select * from new_table ;
+```
 <br>
 <h3>Получаем таблицу, из которой удалены строки, где значение в стобце <tt>name</tt> содержит строку <tt>Jersey</tt>:</h3>
 <br>
@@ -242,10 +274,15 @@
 <br>
 
 <h3><A name="#elete-using">6.2. <tt>DELETE + USING</tt></A></h3>
-<h3><tt>delete from new_table </tt></h3>
-<h3><tt>using df_teams </tt></h3>
-<h3><tt>where df_teams."name" = new_table."name" and df_teams."name" like '%Jersey%';</tt></h3>
-<h3><tt>select * from new_table;</tt></h3>
+
+```
+delete from new_table 
+using df_teams 
+where df_teams."name" = new_table."name" and df_teams."name" like '%Jersey%';
+```
+```
+select * from new_table;
+```
 <br>
 <h3>Также получаем таблицу, из которой удалены строки, где значение в стобце <tt>name</tt> содержит строку <tt>Jersey</tt>:</h3>
 <br>
@@ -262,10 +299,15 @@
 <h3>
   Попытка построить запрос оказалась неудачной. При выполнении удаляются все строки таблицы.
 </h3>
-<h3><tt>delete from new_table </tt></h3>
-<h3><tt>using new_table as nt inner join df_teams on nt."name" = df_teams."name" </tt></h3>
-<h3><tt>where df_teams."name" like '%team%';</tt></h3>
-<h3><tt>select * from new_table;</tt></h3>
+
+```
+delete from new_table 
+using new_table as nt inner join df_teams on nt."name" = df_teams."name" 
+where df_teams."name" like '%team%';
+```
+```
+select * from new_table;
+```
 <br>
 
 |id        |name         |division_id         |division_name          |
