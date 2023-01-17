@@ -267,7 +267,7 @@ select * from new_table ;
 |  3|New York Rangers  |         18|Metropolitan |
 <br>
 
-<h3><A name="#delete-using">6.2. <tt>DELETE + USING</tt></A></h3>
+<h3><A name="delete-using">6.2. <tt>DELETE + USING</tt></A></h3>
 
 ```
 delete from new_table 
@@ -289,7 +289,7 @@ select * from new_table;
 <br>
 
 
-<h3><A name="#delete-using-join">6.3. <tt>DELETE + USING + JOIN</tt></A></h3>
+<h3><A name="delete-using-join">6.3. <tt>DELETE + USING + JOIN</tt></A></h3>
 <h3>
   Попытка построить запрос оказалась неудачной. При выполнении удаляются все строки таблицы.
 </h3>
