@@ -77,12 +77,6 @@ left join df_division on df_teams."division.id" = df_division."division.id";
 |33 |new team             |NT            |NULL         |-> запись не найдена    |
 
 <h3><tt>LEFT JOIN</tt> не обнаружил записей в таблице справа <tt>df_division</tt> для строки #33 таблицы <tt>df_teams</tt></h3>
-<br>
-<h3>Запрос c <tt>INNER JOIN</tt> по таблице <tt>df_person</tt>:
-<h3><tt>sselect "name", "teamName" , "division.name"</h3>
-<h3>from df_teams</h3>
-<h3>inner join df_division on df_teams."division.id" = df_division."division.id";</h3></tt>
-</h3>
 
 <br>
 <h3><A href="#right-join">3.2. <tt>RIGHT JOIN</tt></A></h3>
@@ -273,7 +267,7 @@ select * from new_table ;
 |  3|New York Rangers  |         18|Metropolitan |
 <br>
 
-<h3><A name="#elete-using">6.2. <tt>DELETE + USING</tt></A></h3>
+<h3><A name="#delete-using">6.2. <tt>DELETE + USING</tt></A></h3>
 
 ```
 delete from new_table 
