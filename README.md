@@ -30,6 +30,7 @@ ___
 #### 5.2 Написать запрос с добавлением данных INSERT INTO
 #### 5.3 Написать запрос с обновлением данных с UPDATE FROM
 #### 5.4 Использовать using для оператора DELETE
-#### Решение задач Task5 приведены в 
+#### Решение задач Task5 приведены в [`task_examples.sql`](https://github.com/SolonnikovDV/otusDbProject/blob/master/task_5/task_examples.sql). Описание к каждому пункту в коментариях файла-скрипта
+#### 5.5 [Пример использования утилиты COPY](https://github.com/SolonnikovDV/otusDbProject/blob/master/task_5/copy_table_to_csv.png)
 
 
