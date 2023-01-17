@@ -25,7 +25,7 @@ ___
 #### 4.5. [task description](https://github.com/SolonnikovDV/otusDbProject/blob/master/task_4/task_4_description.md)
 - - -
 
-#### Task 5. [**DDL операторы**]()
+#### Task 5. [**DML операторы**]()
 #### 5.1. Написать запрос с конструкциями SELECT, JOIN
 #### 5.2 Написать запрос с добавлением данных INSERT INTO
 #### 5.3 Написать запрос с обновлением данных с UPDATE FROM
