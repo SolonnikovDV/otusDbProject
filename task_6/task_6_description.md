@@ -126,7 +126,7 @@
 |------------|--------------|-------------------------|----------|
 |books_data  |title         |books_data_title         |btree     |
 
-<h3><A name="#search-of-path">Код:</A></h3>
+<h3><A name="search-of-path">Код:</A></h3>
 
 `explain select * from books_data `<br>
 `where title ilike '%writing%';`<br>
