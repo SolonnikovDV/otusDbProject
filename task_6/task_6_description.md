@@ -94,7 +94,7 @@
 <br>
 
 <h3><A name="books_rating_review/score">3.1 Индекс "books_rating_review/score"</A></h4>
-<h6><A href="indexes">назад к индексам</A><h3>
+<h6><A href="#indexes">назад к индексам</A><h3>
 
 |table name  |field name    |index name               |index type|
 |------------|--------------|-------------------------|----------|
@@ -120,7 +120,7 @@
 <br>
 
 <h3><A name="books_data_title">3.2 Простой индекс "books_data_title"</A></h4>
-<h6><A href="indexes">назад к индексам</A><h3>
+<h6><A href="#indexes">назад к индексам</A><h3>
 
 |table name  |field name    |index name               |index type|
 |------------|--------------|-------------------------|----------|
@@ -144,7 +144,7 @@
 <br>
 
 <h3><A name="books_rating_title">3.3 Составной индекс "books_rating_title"</A></h4>
-<h6><A href="indexes">назад к индексам</A><h3>
+<h6><A href="#indexes">назад к индексам</A><h3>
 
 |table name  |field name    |index name               |index type|
 |------------|--------------|-------------------------|----------|
@@ -176,19 +176,19 @@
 <br>
 <h3>Подготовка полей таблицы для полнотекстового поиска:</h3>
 <br>
+
 `-- change type of column "review/summary", "review/text" to TEXT`<br>
 `alter table books_rating ALTER COLUMN "review/summary" TYPE TEXT;`<br>
 `alter table books_rating ALTER COLUMN "review/text" TYPE TEXT;`<br>
-<br>
 
 <h3>Создаем расширения <tt>pg_trgm</tt> и <tt>btree_gin</tt> для <tt>Postgres</tt> для реализации полнотекстового поиска:</h3>
 
 `-- create extension trgm, btree_gin`<br>
 `CREATE EXTENSION pg_trgm;`<br>
 `CREATE EXTENSION btree_gin;`<br>
-<br>
 
 <h3>Создаем индекс:</h3>
+
 `-- create index`<br>
 `create index text_trgm_idx on books_rating using gin("review/summary" gin_trgm_ops);`<br>
 
