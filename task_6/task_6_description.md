@@ -86,12 +86,15 @@
 <h2><A name="explain-query-result">3. Результат команды <tt>EXPLAIN</tt> по каждому созданному индексу:</A></h2>
 <h6><A href="#содержание">назад в содержание</A></h6>
 <br>
+
+<h3><A name="indexes">Индексы:</A><h3>
 <h3><A href="#books_rating_review/score">3.1 Простой индекс "books_rating_review/score"</A></h3>
 <h3><A href="#books_data_title">3.2 Простой индекс "books_data_title"</A></h3> 
 <h3><A href="#books_rating_title">3.3 Составной "books_rating_title"</A></h3> 
 <br>
 
 <h3><A name="books_rating_review/score">3.1 Индекс "books_rating_review/score"</A></h4>
+<h6><A href="indexes">назад к индексам</A><h3>
 
 |table name  |field name    |index name               |index type|
 |------------|--------------|-------------------------|----------|
@@ -117,12 +120,13 @@
 <br>
 
 <h3><A name="books_data_title">3.2 Простой индекс "books_data_title"</A></h4>
+<h6><A href="indexes">назад к индексам</A><h3>
 
 |table name  |field name    |index name               |index type|
 |------------|--------------|-------------------------|----------|
 |books_data  |title         |books_data_title         |btree     |
 
-<h3><A href="#search-of-path">Код:</A></h3>
+<h3><A name="#search-of-path">Код:</A></h3>
 
 `explain select * from books_data `<br>
 `where title ilike '%writing%';`<br>
@@ -140,6 +144,7 @@
 <br>
 
 <h3><A name="books_rating_title">3.3 Составной индекс "books_rating_title"</A></h4>
+<h6><A href="indexes">назад к индексам</A><h3>
 
 |table name  |field name    |index name               |index type|
 |------------|--------------|-------------------------|----------|
@@ -166,7 +171,7 @@
 
 
 <br>
-<h2><A name="full-text-index">4. Реализовать индекс для полнотекстового поиска/A</h2>
+<h2><A name="full-text-index">4. Реализовать индекс для полнотекстового поиска</A></h2>
 <h6><A href="#содержание">назад в содержание</A></h6>
 <br>
 <h3>Подготовка полей таблицы для полнотекстового поиска:</h3>
@@ -218,6 +223,6 @@
 <h2><A name="index-on-expression">5. Реализовать индекс на часть таблицы или индекс на поле с функцией</A></h2>
 <h6><A href="#содержание">назад в содержание</A></h6>
 <br>
-<h3>Данная часть реализована в данном <A name="search-of-path">запросе</A></h3>
+<h3>Данная часть реализована в данном <A href="#search-of-path">запросе</A></h3>
 <h3>
 <hr>
