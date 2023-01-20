@@ -54,13 +54,13 @@
 <h3>Создаем идексы для таблиц <tt>books_rating, books_data</tt></h3>
 <br>
 
-<h3><A name="simple-index">2.1. Простые индексы по дному полю</A></h3>
+<h3><A name="simple-index">2.1. Простые индексы по одному полю</A></h3>
 <br>
 
-|table name  |field name    |index name                                                                 |index type|
-|------------|--------------|---------------------------------------------------------------------------|----------|
-|books_rating|review/score  |<h4><A href="#books_rating_review/score">books_rating_review/score</A></h4>|btree     |
-|books_data  |title         |<h4><A href="#books_data_title">books_data_title</A></h4>                  |btree     |
+|table name  |field name    |index name               |index type|
+|------------|--------------|-------------------------|----------|
+|books_rating|review/score  |books_rating_review/score|btree     |
+|books_data  |title         |books_data_title         |btree     |
 
 <h3>Код:</h3>
 
@@ -73,9 +73,9 @@
 <h3><A name="multifield-index">2.2. Составные индексы по нескольким полям</A></h3>
 <br>
 
-|table name  |field name                   |index name                                                               |index type|
-|------------|-----------------------------|-------------------------------------------------------------------------|----------|
-|books_rating|id, title                    |<h4><A href="#books_rating_title">books_rating_title</A></h4>            |btree     |
+|table name  |field name                   |index name                 |index type|
+|------------|-----------------------------|---------------------------|----------|
+|books_rating|id, title                    |books_rating_title         |btree     |
 
 <h3>Код:</h3>
 
@@ -87,8 +87,8 @@
 <h6><A href="#содержание">назад в содержание</A></h6>
 <br>
 <h3><A href="#books_rating_review/score">3.1 Простой индекс "books_rating_review/score"</A></h3>
-<h3><A href="#books_data_title">3.2 Простой "books_data_title"</A></h3> 
-<h4><A href="#books_rating_title">3.3 Составной "books_rating_title"</A></h4> 
+<h3><A href="#books_data_title">3.2 Простой индекс "books_data_title"</A></h3> 
+<h3><A href="#books_rating_title">3.3 Составной "books_rating_title"</A></h3> 
 <br>
 
 <h3><A name="books_rating_review/score">3.1 Индекс "books_rating_review/score"</A></h4>
