@@ -35,13 +35,13 @@ ___
 #### 5.6. [task description](https://github.com/SolonnikovDV/otusDbProject/blob/master/task_5/task_5_description.md)
 - - -
 
-#### Task 6. [**DML операторы**]()
+#### Task 6. [**Индексы**]()
 #### 6.1 Создать индекс к какой-либо из таблиц вашей БД
 #### 6.2 Прислать текстом результат команды `explain`,в которой используется данный индекс
 #### 6.3 Реализовать индекс для полнотекстового поиска
 #### 6.4 Реализовать индекс на часть таблицы или индекс на поле с функцией
 #### 6.5 Создать индекс на несколько полей
-#### 6.6 Решение задач Task5 приведены в [`task_examples.sql`](https://github.com/SolonnikovDV/otusDbProject/blob/master/task_5/task_examples.sql). Описание к каждому пункту в коментариях файла-скрипта
-#### 6.7.[Task description](https://github.com/SolonnikovDV/otusDbProject/blob/master/task_5/task_5_description.md)
+#### 6.6 Решение задач Task6 приведены в [task_examples.sql](https://github.com/SolonnikovDV/otusDbProject/blob/master/task_6/index_example.sql). Описание к каждому пункту в коментариях файла-скрипта
+#### 6.7 [Task description](https://github.com/SolonnikovDV/otusDbProject/blob/master/task_6/task_6_description.md)
 - - -
 
