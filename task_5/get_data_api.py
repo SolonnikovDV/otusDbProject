@@ -132,6 +132,14 @@ def import_df_to_db(df_dict: dict):
         print(f'{DATA_TIME} >> Data import is successful')
 
 
-if __name__ == '__main__':
-    import_df_to_db(get_data_from_ulr(API_NHL_TEAM))
+def find_dig(text):
+    dig_str = ''
+    for i in text:
+        if i.isdigit():
+            dig_str += i
+    return dig_str
 
+if __name__ == '__main__':
+    # import_df_to_db(get_data_from_ulr(API_NHL_TEAM))
+    text = 'fff34f4fff5'
+    print(find_dig(text))

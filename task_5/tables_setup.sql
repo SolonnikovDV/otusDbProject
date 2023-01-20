@@ -23,3 +23,4 @@ FOREIGN KEY ("division.id") REFERENCES df_division ("division.id");
 -- set indexes
 CREATE INDEX "index_persons_id_name" ON df_person USING btree( "id", "fullName" );
 CREATE INDEX "index_persons_position" ON df_person USING btree( "position.name", "position.type");
+
