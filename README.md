@@ -45,12 +45,12 @@ ___
 #### 6.7 [Task description](https://github.com/SolonnikovDV/otusDbProject/blob/master/task_6/task_6_description.md)
 - - -
 
-#### Task 7. [**Aункциb LAG и CTE**](https://github.com/SolonnikovDV/otusDbProject/tree/master/task_6)
+#### Task 7. [**Функции LAG и CTE**](https://github.com/SolonnikovDV/otusDbProject/tree/master/task_7)
 #### 7.1 Написать запрос суммы очков с группировкой и сортировкой по годам
 #### 7.2 Написать cte показывающее тоже самое
 #### 7.3 Реализовать индекс для полнотекстового поиска
 #### 7.4 Используя функцию LAG вывести кол-во очков по всем игрокам за текущий код и за предыдущий
-#### 7.5 Решение задач Task7 приведены в [task_examples.sql](https://github.com/SolonnikovDV/otusDbProject/blob/master/task_6/index_example.sql). Описание к каждому пункту в коментариях файла-скрипта
-#### 7.6 [Task description](https://github.com/SolonnikovDV/otusDbProject/blob/master/task_6/task_6_description.md)
+#### 7.5 Решение задач Task7 приведены в [task_examples.sql](https://github.com/SolonnikovDV/otusDbProject/blob/master/task_7/sql_code.sql).
+#### 7.6 [Task description](https://github.com/SolonnikovDV/otusDbProject/blob/master/task_7/task_7_description.md#return-explain-text)
 - - -
 
