@@ -5,6 +5,12 @@
     <value-preview-text-wrapping value="true" />
     <value-preview-pinned value="false" />
   </component>
+  <component name="DBNavigator.Project.DatabaseBrowserManager">
+    <autoscroll-to-editor value="false" />
+    <autoscroll-from-editor value="true" />
+    <show-object-properties value="true" />
+    <loaded-nodes />
+  </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="94769384-2d96-435f-86c7-b46774577afc">
       <console name="otus-project-db" type="STANDARD" schema="index-task" session="Main" />
