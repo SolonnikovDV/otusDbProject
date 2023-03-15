@@ -54,3 +54,9 @@ ___
 #### 7.6 [Task description](https://github.com/SolonnikovDV/otusDbProject/blob/master/task_7/task_7_description.md#return-explain-text)
 - - -
 
+#### Task 8. [**Репликация**](https://github.com/SolonnikovDV/otusDbProject/tree/master/task_8)
+#### 8.1 Настроить физическую репликации между двумя кластерами базы данных [script](https://github.com/SolonnikovDV/otusDbProject/blob/master/task_8/physical_replication.sh)
+#### 8.2 Написать cte показывающее тоже самое [script](https://github.com/SolonnikovDV/otusDbProject/blob/master/task_8/logical_replication.sh)
+#### 8.3 [Task description](https://github.com/SolonnikovDV/otusDbProject/blob/master/task_8/task_8_description.md)
+- - -
+
