@@ -55,7 +55,7 @@
 <h3>1.4. Проверка синхронизации:</h3>
 
 <h3>База данных синхронизирована</h3>
-<img src="task_8/screen_physic_replic/04_check_replica_db.png">
+<img src="https://github.com/SolonnikovDV/otusDbProject/blob/master/task_8/screen_physic_replic/04_check_replica_db.png">
 
 <h3>Создание таблицы на мастере в базе данных:</h3>
 <h3><tt># create db replica_trest on master-cluster:</tt><br>
@@ -66,13 +66,13 @@
         <tt>( '2017-02-01'::date,</tt><br>
         <tt>'2017-04-01'::date,</tt><br>
         <tt>'1 day'::interval) day;</tt></h3>
-<img src="task_8/screen_physic_replic/05_2_create_table_master_replica.png">
+<img src="https://github.com/SolonnikovDV/otusDbProject/blob/master/task_8/screen_physic_replic/05_2_create_table_master_replica.png">
 
 <h3>Проверка вставки данных:</h3>
-<img src="task_8/screen_physic_replic/05_3_insert_value_replica.png">
+<img src="https://github.com/SolonnikovDV/otusDbProject/blob/master/task_8/screen_physic_replic/05_3_insert_value_replica.png">
 
 <h3>1.5. Настройка задержки синхронизации(параметр <tt>checkpoint_timeout</tt>):</h3>
-<img src="task_8/screen_physic_replic/06_5_min_dalay_checkpoint_wal.png">
+<img src="https://github.com/SolonnikovDV/otusDbProject/blob/master/task_8/screen_physic_replic/06_5_min_dalay_checkpoint_wal.png">
 
 <h2><A name="create-indexes">2. Настроить логическую репликации между двумя кластерами базы данных</A></h2>
 <h6><A href="#содержание">назад в содержание</A></h6>
@@ -116,7 +116,7 @@
 <tt>alter system set max_replication_slots = '4';</tt><br>
 <tt># restart</tt><br></h3>
 <br>
-<img src="task_8/screen_logical_replic/01_run_logical_cluster.png">
+<img src="https://github.com/SolonnikovDV/otusDbProject/blob/master/task_8/screen_logical_replic/01_run_logical_cluster.png">
 
 <h3>1.3. Создание публикации на мастер-кластере:</h3>
 
@@ -133,7 +133,7 @@
 <tt># create publication:</tt><br>
 <tt>create publication test_pub for table shoe_prices;</tt></h3>
 <br>
-<img src="task_8/screen_logical_replic/02_create_publication.png">
+<img src="https://github.com/SolonnikovDV/otusDbProject/blob/master/task_8/screen_logical_replic/02_create_publication.png">
 
 <h3>1.4. Создание подписки на слейве</h3>
 
@@ -149,7 +149,7 @@
 <tt>connection 'host=localhost port=5432 dbname=replica_logical user=pg-user password=pg-pass'</tt><br>
 <tt>publication test with (copy_data=true);</tt><br></h3>
 <br>
-<img src="task_8/screen_logical_replic/03_create_subcribe.png">
+<img src="https://github.com/SolonnikovDV/otusDbProject/blob/master/task_8/screen_logical_replic/03_create_subcribe.png">
 
 <h3>1.5. Проверка синхронизации:</h3>
 
@@ -157,5 +157,5 @@
 <tt>insert into shoe_prices values </tt><br>
 <tt>('new_brand', 'new_model', 'some_type', 'unknown_gender', 'super_size', 'deep_color', 'nasa_material', 'huge_price');</tt><br><h3>
 <br>
-<img src="task_8/screen_logical_replic/04_siync_subcribe.png">
+<img src="https://github.com/SolonnikovDV/otusDbProject/blob/master/task_8/screen_logical_replic/04_siync_subcribe.png">
 
