@@ -116,7 +116,7 @@
 <tt>alter system set max_replication_slots = '4';</tt><br>
 <tt># restart</tt><br></h3>
 <br>
-<img src="task_8/screen_logical_replic/01_run_logical_cluster.png">
+<img src="[task_8/screen_logical_replic/01_run_logical_cluster.png](https://github.com/SolonnikovDV/otusDbProject/blob/master/task_8/screen_logical_replic/01_run_logical_cluster.png)">
 
 <h3>1.3. Создание публикации на мастер-кластере:</h3>
 
