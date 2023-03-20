@@ -60,3 +60,6 @@ ___
 #### 8.3 [Task description](https://github.com/SolonnikovDV/otusDbProject/blob/master/task_8/task_8_description.md)
 - - -
 
+#### Task 9. [**Репликация**](https://github.com/SolonnikovDV/otusDbProject/tree/master/task_9)
+- - -
+
