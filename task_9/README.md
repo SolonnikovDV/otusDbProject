@@ -20,8 +20,8 @@
 
 <h4><tt># enter to mysql:</tt><br>
 <tt>> mysql -u root -p12345 --port=3309 --protocol=tcp otus</tt></h4>
-
-<img src="https://github.com/SolonnikovDV/otusDbProject/blob/master/task_8/screens/01_create_db.png">
+<br>
+<img src="https://github.com/SolonnikovDV/otusDbProject/blob/master/task_9/screens/01_create_db.png">
 
 <h3><A name="create-db">2. Создать базу даныхa и настроить пременные 'buffer'</A></h3>
 <h6><A href="#содержание">назад в содержание</A></h6>
@@ -74,7 +74,7 @@
 <tt>-- to check new status of innodb_buffer_pool_size and innodb_buffer_pool_instances:</tt><br>
 <tt>SELECT @@innodb_buffer_pool_size/1024/1024 AS 'InnoDB Buffer Pool Size in MByte';</tt><br>
 <br>
-
+<br>
 <img src="https://github.com/SolonnikovDV/otusDbProject/blob/master/task_8/screens/03_buffer_pool_size_and_instance.png">
 
 **```-- NOTICE: all changes will drops after restart server```** 
@@ -96,5 +96,5 @@
 <tt>-- check innodb_buffer_pool_instances:</tt><br>
 <tt>SELECT @@innodb_buffer_pool_size/1024/1024 AS 'InnoDB Buffer Pool Size in MByte';</tt><br>
 <tt>SELECT @@innodb_buffer_pool_instances AS 'InnoDB Buffer Pool Instance';</tt></h4>
-
+<br>
 <img src="https://github.com/SolonnikovDV/otusDbProject/blob/master/task_8/screens/04_changing_my.conf.png">
