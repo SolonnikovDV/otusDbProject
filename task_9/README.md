@@ -75,7 +75,7 @@
 <tt>SELECT @@innodb_buffer_pool_size/1024/1024 AS 'InnoDB Buffer Pool Size in MByte';</tt><br>
 <br>
 <br>
-<img src="https://github.com/SolonnikovDV/otusDbProject/blob/master/task_8/screens/03_buffer_pool_size_and_instance.png">
+<img src="https://github.com/SolonnikovDV/otusDbProject/blob/master/task_9/screens/03_buffer_pool_size_and_instance.png">
 
 **```-- NOTICE: all changes will drops after restart server```** 
 <br>
@@ -97,4 +97,4 @@
 <tt>SELECT @@innodb_buffer_pool_size/1024/1024 AS 'InnoDB Buffer Pool Size in MByte';</tt><br>
 <tt>SELECT @@innodb_buffer_pool_instances AS 'InnoDB Buffer Pool Instance';</tt></h4>
 <br>
-<img src="https://github.com/SolonnikovDV/otusDbProject/blob/master/task_8/screens/04_changing_my.conf.png">
+<img src="https://github.com/SolonnikovDV/otusDbProject/blob/master/task_9/screens/04_changing_my.conf.png">
