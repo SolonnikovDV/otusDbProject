@@ -63,3 +63,5 @@ ___
 #### Task 9. [**Репликация**](https://github.com/SolonnikovDV/otusDbProject/tree/master/task_9)
 - - -
 
+#### Task 10. [**Типы данных в MySQL**](https://github.com/SolonnikovDV/otusDbProject/tree/master/task_10)
+- - -
