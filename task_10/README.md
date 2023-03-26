@@ -185,7 +185,7 @@ LIMIT 5;</tt><h4>
 <tt> FROM df_model</tt><br>
 <tt> WHERE JSON_EXTRACT(model_attribute , "$.Color") IN ("Black")</tt><br>
 <tt> &emsp; &emsp; &emsp; &emsp;    AND cast(</tt><br>
-<tt> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;  &emsp;       SUBSTRING_INDEX(</tt><br>
+<tt> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;         SUBSTRING_INDEX(</tt><br>
 <tt> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;     SUBSTRING_INDEX(JSON_EXTRACT(model_attribute , '$."Price (USD)"'), '$', -1),</tt><br>
 <tt> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;     '.', 1)</tt><br>
-<tt> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;  &emsp;       AS ) > 160;</tt></h4>
+<tt> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;        AS ) > 160;</tt></h4>
