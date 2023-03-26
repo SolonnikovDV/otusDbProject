@@ -134,7 +134,7 @@ WHERE JSON_EXTRACT(model_attribute , "$.Color") IN ("Black")
             SUBSTRING_INDEX(
                             SUBSTRING_INDEX(JSON_EXTRACT(model_attribute , '$."Price (USD)"'), '$', -1),
                             '.', 1)
-            AS ) > 160;
+            AS SIGNED) > 160;
 
 --| id   | model                     | color   | material            | type            | price_in_usd |
 --|------|---------------------------|---------|---------------------|-----------------|--------------|
