@@ -64,6 +64,7 @@
 </h4>
 
 <h4>1.2. Импорт датафреймов из python в БД mysql</h4>
+
 ```python
     def insert_data_to_mysql(df_dict: dict, df_name: str):
         df = df_dict[f'{df_name}']
