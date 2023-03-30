@@ -16,7 +16,7 @@
 
 <h4>В качестве исходного датасета взят csv 9Gb с [kaggle](https://www.kaggle.com/datasets/mkechinov/ecommerce-events-history-in-electronics-store)</h4>
 <h4>Исходный csv содержит 67М сторок, но для datafame объем чтение был ограничен 30М строками</h4>
-```jupyterpython
+```python
     def csv_to_df() -> pd.DataFrame:
         # set option to see all columns in console
         pd.set_option('display.max_columns', None)
@@ -33,12 +33,12 @@
 
 <h4>Обработка данных происходит на backEnd<br></h4> 
 * разделение на таблицы:
-```jupyterpython
+```python
     df.iloc[:, [col_number, next_col_number, ...]]
 ```
 
 * сгенерировано ключевое поле:
-```jupyterpython
+```python
     def hash_id_generate (count: int) -> []:
         list_of_hash = []
 
@@ -48,7 +48,7 @@
         return list_of_hash
 ```
 * удаление строк дубликатов, в данном случае удалялись строки, где дублирущее значение возникало в поле-ключе (<tt>.drop_duplicates()</tt>), проверка на <tt>is NULL</tt> и удаление <tt>NULL</tt> значение из полей ключа: 
-```jupyterpython
+```python
     # val.columns[0] - name of column in a string type
     for key, val in enumerate(tqdm(df_list)):
         
@@ -64,7 +64,7 @@
 </h4>
 
 <h4>1.2. Импорт датафреймов из python в БД mysql</h4>
-```jupyterpython
+```python
     def insert_data_to_mysql(df_dict: dict, df_name: str):
         df = df_dict[f'{df_name}']
         print(df.head(5))
