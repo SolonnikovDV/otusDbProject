@@ -16,6 +16,7 @@
 
 <h4>В качестве исходного датасета взят csv 9Gb с [kaggle](https://www.kaggle.com/datasets/mkechinov/ecommerce-events-history-in-electronics-store)</h4>
 <h4>Исходный csv содержит 67М сторок, но для datafame объем чтение был ограничен 30М строками</h4>
+
 ```python
     def csv_to_df() -> pd.DataFrame:
         # set option to see all columns in console
@@ -30,14 +31,15 @@
         return df
 ```
 
-
 <h4>Обработка данных происходит на backEnd<br></h4> 
 * разделение на таблицы:
+
 ```python
     df.iloc[:, [col_number, next_col_number, ...]]
 ```
 
 * сгенерировано ключевое поле:
+
 ```python
     def hash_id_generate (count: int) -> []:
         list_of_hash = []
@@ -48,6 +50,7 @@
         return list_of_hash
 ```
 * удаление строк дубликатов, в данном случае удалялись строки, где дублирущее значение возникало в поле-ключе (<tt>.drop_duplicates()</tt>), проверка на <tt>is NULL</tt> и удаление <tt>NULL</tt> значение из полей ключа: 
+
 ```python
     # val.columns[0] - name of column in a string type
     for key, val in enumerate(tqdm(df_list)):
@@ -60,8 +63,7 @@
         
         # append df to a dictionary of dataframes:
         df_dict.update({key_list[key]: val})
-``` 
-</h4>
+```
 
 <h4>1.2. Импорт датафреймов из python в БД mysql</h4>
 
@@ -117,12 +119,14 @@ DESCRIBE df_hub;
 <br>
 
 <h4>Всего таблица <tt>'df_hub'</tt> содержит 30 млн записей</h4>
+
 ```mysql
 SELECT CONCAT(
                CAST(COUNT(event_id) / 1000000 AS SIGNED),
                'M') AS total_row_count
 FROM df_hub;
 ```
+
 | total_row_count |
 |-----------------|
 | 30M             |
@@ -161,6 +165,7 @@ FROM cte_event
          LEFT JOIN cte_session ON cte_event.event_id = cte_session.event_id
 LIMIT 5;
 ```
+
 | event_type | user_id   |
 |------------|-----------|
 | view       | 513408484 |
@@ -195,6 +200,7 @@ FROM cte_prod
 WHERE DAY(cte_event.event_time) between '14' AND '15' AND cte_prod.price > 500 AND cte_prod.brand IN ('volcano')
    OR DAY(cte_event.event_time) < '18' AND cte_prod.price > 500 AND cte_prod.brand IN ('midea');
 ```
+
 | brand   | price | category_code                      | event_time          |
 |---------|-------|------------------------------------|---------------------|
 | volcano | 518.9 | appliances.environment.air_heater  | 2019-11-15 01:01:28 |
