@@ -209,7 +209,10 @@ WHERE DAY(cte_event.event_time) between '14' AND '15' AND cte_prod.price > 500 A
 | volcano | 518.9 | appliances.environment.air_heater  | 2019-11-14 17:46:54 |
 | volcano | 518.9 | appliances.environment.air_heater  | 2019-11-15 01:01:13 |
  
-<h4>Но если изменить параметр сравнения в последнем условии ```OR DAY(cte_event.event_time) = '18'``` на ```OR DAY(cte_event.event_time) <= '18'``` результат изменится:</h4>
+<h4>Но если изменить параметр сравнения в последнем условии <br>
+<tt>OR DAY(cte_event.event_time) = '18'</tt> на <br>
+<tt>OR DAY(cte_event.event_time) <= '18'</tt> <br>
+то результат изменится:</h4>
 
 | brand   | price   | category_code                          | event_time          |
 |---------|---------|----------------------------------------|---------------------|
