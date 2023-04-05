@@ -127,7 +127,7 @@ DESCRIBE tracks;
 ### Upload csv to db using python scrips is a most powerful method (IMAO), because it allows any type of validation, customisation and transformation data into dataframe.
 
 <br>
-<h4><A name="import_data_load_data">2. Upload .csv with <tt>'LOAD DATA'</tt></A></h4>
+<h3><A name="import_data_load_data">2. Upload .csv with <tt>'LOAD DATA'</tt></A></h3>
 <h6><A href="#contents">back to contents >></A></h6>
 <br>
 
@@ -216,7 +216,7 @@ SELECT * FROM statistic_load_data limit 3;
 <hr>
 <br>
 
-<h4><A href="import_data_load_data_mysqlimport">3. Upload .csv with <tt>'mysqlimport'</tt></A></h4>
+<h3><A href name="import_data_load_data_mysqlimport">3. Upload .csv with <tt>'mysqlimport'</tt></A></h3>
 <h6><A href="#contents">back to contents >></A></h6>
 
 #### Process describe:
@@ -250,7 +250,7 @@ csv_load_db.statistic: Records: 1501980  Deleted: 0  Skipped: 0  Warnings: 0
 <hr>
 <br>
 
-<h4><A href="transaction_case">4. Transaction with stored procedure</A></h4>
+<h3><A href name="transaction_case">4. Transaction with stored procedure</A></h3>
 <h6><A href="#contents">back to contents >></A></h6>
 
 #### Process describe:
