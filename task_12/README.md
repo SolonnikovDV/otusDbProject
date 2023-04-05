@@ -4,7 +4,7 @@
 <h4><A href="#import_data_to_mysql_python">1. Upload .csv with python</A></h4>
 <h4><A href="#import_data_load_data">2. Upload .csv with <tt>'LOAD DATA'</tt></A></h4>
 <h4><A href="#import_data_load_data_mysqlimport">3. Upload .csv with <tt>'mysqlimport'</tt></A></h4>
-<h4><A href="#transaction_case">4. Transaction case</A></h4>
+<h4><A href="#transaction_case">4. Transaction with stored procedure</A></h4>
 <hr>
 
 <h3><A href name="import_data_to_mysql_python">1. Upload .csv with python</A></h3>
@@ -250,7 +250,7 @@ csv_load_db.statistic: Records: 1501980  Deleted: 0  Skipped: 0  Warnings: 0
 <hr>
 <br>
 
-<h4><A href="transaction_case">4. Transaction case</A></h4>
+<h4><A href="transaction_case">4. Transaction with stored procedure</A></h4>
 <h6><A href="#contents">back to contents >></A></h6>
 
 #### Process describe:
