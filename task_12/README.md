@@ -319,7 +319,7 @@ SHOW INDEX FROM tracks;
 DELIMITER //
 CREATE PROCEDURE transactions()
 BEGIN
-    select artists.name, tracks.artists
+    select artists.name as name_from_artists, tracks.artists as artists_from_tracks
     from tracks
              JOIN artists ON tracks.id_artists = artists.id;
 END //
@@ -341,12 +341,12 @@ SHOW PROCEDURE STATUS WHERE name in ('transactions');
 CALL transactions();
 ```
 
-| name            | artists               |
-|:----------------|:----------------------|
-| Uli             | \['Uli'\]             |
-| Fernando Pessoa | \['Fernando Pessoa'\] |
-| Ignacio Corsini | \['Ignacio Corsini'\] |
-| Ignacio Corsini | \['Ignacio Corsini'\] |
-| ...             | ...                   |
+| name\_from\_artists | artists\_from\_tracks |
+|:--------------------|:----------------------|
+| Uli                 | \['Uli'\]             |
+| Fernando Pessoa     | \['Fernando Pessoa'\] |
+| Ignacio Corsini     | \['Ignacio Corsini'\] |
+| Ignacio Corsini     | \['Ignacio Corsini'\] |
+| ...                 | ...                   |
 
 * procedure works successful
