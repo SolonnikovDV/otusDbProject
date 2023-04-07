@@ -3,7 +3,7 @@
 
 ### Using DB model:
 
-<img src="/Users/dmitrysolonnikov/PycharmProjects/otusDbProject/task_13/ecom_events_db_model.png">
+<img src="https://github.com/SolonnikovDV/otusDbProject/blob/master/task_13/ecom_events_db_model.png">
 
 
 ### Selection with most expansive and cheapest product (```max()```, ```min()```)
