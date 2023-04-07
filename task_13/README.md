@@ -245,13 +245,13 @@ GROUP BY cte_prod.brand, cte_prod.product_id
 WITH ROLLUP;
 ```
 
-| brand                                         | product  | products\_count |
-|:----------------------------------------------|:---------|:----------------|
-| a-derma                                       | 21900351 | 2               |
-| a-derma                                       | 21900512 | 6               |
-| Total count of products of the brand: a-derma | ----->>> | 185             |
-| a-elita                                       | 32900083 | 45              |
-| a-elita                                       | 32900095 | 68              |
-| Total count of products of the brand: a-elita | ----->>> | 113             |
+| brand                                         | product   | products\_count |
+|:----------------------------------------------|:----------|:----------------|
+| a-derma                                       | 21900351  | 2               |
+| a-derma                                       | 21900512  | 6               |
+| Total count of products of the brand: a-derma | ----- >>> | 185             |
+| a-elita                                       | 32900083  | 45              |
+| a-elita                                       | 32900095  | 68              |
+| Total count of products of the brand: a-elita | ----- >>> | 113             |
 
 
