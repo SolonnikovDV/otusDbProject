@@ -154,8 +154,6 @@ FROM cte_min
 
  * can't find the way to union product_id values under array with the same price
 
-* Using 
-
 * * *
 
 ### Selection of products count under brand with using ```ROLLUP```:
