@@ -158,7 +158,7 @@ FROM cte_min
 
 * * *
 
-### Selection of products count under brand with using ROLLUP:
+### Selection of products count under brand with using ```ROLLUP```:
 
 ```mysql
 WITH cte_prod AS (SELECT product_id, brand, price
@@ -222,7 +222,9 @@ WHERE endless_cte.total_count IN ('TOTAL');
 
 * Works perfectly
 
-* ```ROLLUP``` with ```GROUPING()```
+* * *
+
+### Selection of products count under brand with using ```ROLLUP``` with ```GROUPING()```
 
 ```mysql
 WITH cte_prod AS (SELECT product_id, brand
