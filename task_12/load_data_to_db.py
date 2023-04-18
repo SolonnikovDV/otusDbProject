@@ -12,7 +12,7 @@ PASSWORD = cfg.PASSWORD
 HOST = cfg.HOST
 PORT = cfg.PORT
 
-PATH_TO_CSV = cfg.path_to_save_csv
+PATH_TO_CSV = cfg.path_to_save_csv_task_12
 
 def import_df_to_mysql(dict_of_df: dict, csv_name: str):
 

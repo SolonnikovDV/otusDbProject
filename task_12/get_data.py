@@ -10,7 +10,7 @@ from utils import config as cfg
 
 ext = 'iso'
 url = 'https://github.com/levinmejia/Shopify-Product-CSVs-and-Images/blob/master/CSVs'
-PATH_TO_CSV = cfg.path_to_save_csv
+PATH_TO_CSV = cfg.path_to_save_csv_task_12
 
 
 '''
