@@ -3,11 +3,11 @@ import utils.config as cfg
 from download_from_kaggle import csv_to_dict
 
 
-DB_NAME = 'csv_load_db'
-USER = cfg.USER
-PASSWORD = cfg.PASSWORD
-HOST = cfg.HOST
-PORT = cfg.PORT
+DB_NAME = cfg.ROOT_DB_NAME
+USER = cfg.ROOT_USER
+PASSWORD = cfg.ROOT_PASSWORD
+HOST = cfg.ROOT_HOST
+PORT = cfg.ROOT_PORT
 
 PATH_TO_CSV = cfg.path_to_save_csv_task_14
 
@@ -15,8 +15,6 @@ PATH_TO_CSV = cfg.path_to_save_csv_task_14
 def import_dask_to_mysql(dict_: dict, table: str):
     # get df from dictionary from ```csv_to_dict(path_to_csv: str) -> {}```
     dd = dict_[table]
-
-    # print(dd.head(5))
 
     to_sql_uri = f'mysql+pymysql://{USER}:{PASSWORD}@{HOST}:{PORT}/{DB_NAME}'
 
@@ -29,11 +27,12 @@ def import_dask_to_mysql(dict_: dict, table: str):
     for i in range(dd.npartitions):
         partition = dd.get_partition(i)
         if i == 0:
-            partition.to_sql(table, uri=to_sql_uri, if_exists='replace', index=False)
+            partition.to_sql(table, uri=to_sql_uri, if_exists='replace')
         if i > 0:
-            partition.to_sql(table, uri=to_sql_uri, if_exists='append', index=False)
+            partition.to_sql(table, uri=to_sql_uri, if_exists='append')
         i += 1
 
 
 if __name__ == '__main__':
     import_dask_to_mysql(csv_to_dict(PATH_TO_CSV), 'steam_reviews')
+    # import_dask_to_mysql(csv_to_dict2(PATH_TO_CSV), 'steam_reviews')

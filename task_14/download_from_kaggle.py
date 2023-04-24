@@ -1,4 +1,5 @@
 import os
+import uuid
 
 import pandas as pd
 from dask import dataframe as dd
@@ -78,20 +79,35 @@ def csv_to_dict(path_to_csv: str) -> {}:
             if file.split('.')[1] == f'{file_extension}':
                 file_list_with_extension.append(file)
                 # append key - value into dictionary
-                df = dd.read_csv(f'{path_to_csv}{file}', on_bad_lines="skip", engine='python', encoding='utf8',
+                df = dd.read_csv(f'{path_to_csv}{file}',
+                                 engine='python',  escapechar="\n", on_bad_lines="skip", encoding='utf-8',
                                  dtype={'Unnamed: 0': 'object',
                                         'author.num_games_owned': 'object',
                                         'author.num_reviews': 'object',
                                         'author.steamid': 'object',
-                                        'review_id': 'object',
+                                        'review_id': 'string',
                                         'timestamp_created': 'object',
                                         'votes_funny': 'object',
                                         'votes_helpful': 'object',
                                         'app_id': 'object',
                                         'comment_count': 'object',
                                         'timestamp_updated': 'object',
-                                        'weighted_vote_score': 'object'
-                                        })
+                                        'weighted_vote_score': 'object',
+                                        'author.last_played': 'object'
+                                        }).drop(['Unnamed: 0',
+                                                 'recommended',
+                                                 'votes_helpful',
+                                                 'votes_funny',
+                                                 'weighted_vote_score',
+                                                 'comment_count',
+                                                 'steam_purchase',
+                                                 'received_for_free',
+                                                 'written_during_early_access',
+                                                 'author.num_games_owned',
+                                                 'author.num_reviews',
+                                                 'author.playtime_last_two_weeks',
+                                                 'author.playtime_at_review'],
+                                                axis=1)
                 df['author.last_played'] = dd.to_datetime(df['author.last_played'], unit='s')
                 dict_of_df.update({file.split('.')[0]: df})
 
@@ -101,5 +117,5 @@ def csv_to_dict(path_to_csv: str) -> {}:
 
 
 if __name__ == '__main__':
-    print(csv_to_dict(PATH_TO_CSV)['steam_reviews'].head(5))
+    print(csv_to_dict(PATH_TO_CSV)['steam_reviews'].head(1))
     ...

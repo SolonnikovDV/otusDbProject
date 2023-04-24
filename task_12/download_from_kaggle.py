@@ -82,5 +82,5 @@ def csv_to_dict(path_to_csv: str) -> {}:
 if __name__ == '__main__':
     get_data_from_api(dataset, PATH_TO_CSV)
     # get_files_in_dir('csv')
-    # csv_to_dict(PATH_TO_CSV)
+    print(csv_to_dict(PATH_TO_CSV).head(1))
     ...
