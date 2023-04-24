@@ -3,6 +3,9 @@
 
 ### Step 1: create model like 'Star' from dataset `steam_reviews` from task 14
 
+<img src="https://github.com/SolonnikovDV/otusDbProject/blob/master/task_1/db_model.png">
+
+
 ```mysql
 -- create db
 CREATE DATABASE steam_rev;

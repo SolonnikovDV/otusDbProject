@@ -2,11 +2,11 @@ from sqlalchemy import create_engine
 from csv_to_nf3 import csv_to_df, split_df
 import utils.config as cfg
 
-DB_NAME = cfg.DB_NAME
-USER =  cfg.USER
-PASSWORD = cfg.PASSWORD
-HOST = cfg.HOST
-PORT = cfg.PORT
+DB_NAME = 'shoe_catalogue'
+USER =  cfg.ROOT_USER
+PASSWORD = cfg.ROOT_PASSWORD
+HOST = cfg.ROOT_HOST
+PORT = cfg.ROOT_PORT
 
 def insert_data_to_mysql(df_dict: dict, df_name: str):
     df = df_dict[f'{df_name}']
